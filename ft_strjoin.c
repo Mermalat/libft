@@ -6,13 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:18:17 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 20:19:13 by merma            ###   ########.fr       */
+/*   Updated: 2026/01/20 21:48:25 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_stroin(const char *s1, const char *s2)
+char	*ft_stroin(const char *s1, const char *s2)
 {
     size_t  len1;
     size_t  len2;

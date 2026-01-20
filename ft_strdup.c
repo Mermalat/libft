@@ -6,13 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:58:37 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 18:09:03 by merma            ###   ########.fr       */
+/*   Updated: 2026/01/20 21:48:15 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
     size_t  len;
     char    *dup;

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 15:32:27 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:48:10 by merma            ###   ########.fr       */
+/*   Created: 2026/01/20 21:45:33 by merma             #+#    #+#             */
+/*   Updated: 2026/01/20 21:48:02 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-    while (*s)
+    if (n == -2147483648)
     {
-        if (*s == (char)c)
-            return ((char *)s);
-        s++;
+        write(fd, "-2147483648", 11);
+        return;
     }
-    if (c == '\0')
-        return ((char *)s);
-    return (0);
+    if (n < 0)
+    {
+        write(fd, "-", 1);
+        n = -n;
+    }
+    if (n >= 10)
+    {
+        ft_putnbr_fd(n / 10, fd);
+    }
+    char digit = (n % 10) + '0';
+    write(fd, &digit, 1);
 }

@@ -6,12 +6,12 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:51:10 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 18:09:03 by merma            ###   ########.fr       */
+/*   Updated: 2026/01/20 21:55:11 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_strnstr(const char *s, const char *tofind, size_t len)
+char	*ft_strnstr(const char *s, const char *tofind, size_t len)
 {
     size_t  i;
     size_t  j;

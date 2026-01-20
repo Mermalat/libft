@@ -6,13 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:26:49 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 18:09:03 by merma            ###   ########.fr       */
+/*   Updated: 2026/01/20 21:55:21 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlcat(char *dst, const char *src, size_t dstsize)
+int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
     size_t	i;
     size_t	dst_len;
