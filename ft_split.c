@@ -6,13 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:42:43 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 21:13:46 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 00:17:29 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_separator(char c, char *sep)
+static int	is_separator(char c, char *sep)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	is_separator(char c, char *sep)
 	return (0);
 }
 
-int	count_words(char *str, char *sep)
+static int	count_words(char *str, char *sep)
 {
 	int	i;
 	int	words;
@@ -51,7 +51,7 @@ int	count_words(char *str, char *sep)
 	return (words);
 }
 
-char	*word_splitter(char *str, char *sep)
+static char	*word_splitter(char *str, char *sep)
 {
 	char	*word;
 	int		i;
@@ -77,31 +77,30 @@ char	*word_splitter(char *str, char *sep)
 	return (word);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *sep)
 {
 	int		i;
 	int		j;
-
 	char	**words;
 
 	i = 0;
 	j = 0;
 
-    if (str == NULL || charset == NULL)
+    if (str == NULL || sep == NULL)
 		return (NULL);
 
-	words = (char **) malloc(sizeof(char *) * (count_words(str, charset) + 1));
+	words = (char **) malloc(sizeof(char *) * (count_words(str, sep) + 1));
 
 	if (words == NULL)
 		return (NULL);
 
 	while (str[i])
 	{
-		if (!is_separator(str[i], charset))
+		if (!is_separator(str[i], sep))
 		{
-			words[j] = word_splitter(&str[i], charset);
+			words[j] = word_splitter(&str[i], sep);
 
-			while (str[i] && !is_separator(str[i], charset))
+			while (str[i] && !is_separator(str[i], sep))
 				i++;
 			
 			j++;

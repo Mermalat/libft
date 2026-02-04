@@ -6,11 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 17:57:35 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:55:18 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 00:04:44 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
     int len;
 
