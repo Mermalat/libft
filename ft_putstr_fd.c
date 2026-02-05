@@ -6,11 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 21:44:47 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:48:05 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 03:01:25 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
+
 void	ft_putstr_fd(char *s, int fd)
 {
     if (!s)

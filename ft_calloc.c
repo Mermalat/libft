@@ -6,13 +6,14 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:58:17 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:47:01 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 00:55:12 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
     size_t total_size;
     void *ptr;

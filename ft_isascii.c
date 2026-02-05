@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 01:14:19 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 03:11:25 by merma            ###   ########.fr       */
+/*   Created: 2026/02/05 02:36:45 by merma             #+#    #+#             */
+/*   Updated: 2026/02/05 02:36:48 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+int ft_isascii(int c)
 {
-	if (!lst || !del)
-		return;
-	del(lst->content);
-	free(lst);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

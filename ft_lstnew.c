@@ -6,11 +6,13 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 21:57:06 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:57:16 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 02:55:38 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+
 t_list *ft_lstnew(void *content)
 {
 	t_list  *new_node;

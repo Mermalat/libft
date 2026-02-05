@@ -6,11 +6,12 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:18:17 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:48:25 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 02:54:38 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_stroin(const char *s1, const char *s2)
 {

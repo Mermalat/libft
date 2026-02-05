@@ -6,12 +6,12 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:33:32 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 22:50:28 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 03:11:10 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	*ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return;

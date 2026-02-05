@@ -6,11 +6,12 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 01:17:31 by merma             #+#    #+#             */
-/*   Updated: 2026/01/24 01:17:44 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 02:55:45 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

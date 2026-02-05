@@ -6,11 +6,12 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:49:34 by merma             #+#    #+#             */
-/*   Updated: 2026/01/18 21:22:02 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 02:56:11 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static char	*ft_strrev(char *str)
 {
@@ -41,7 +42,7 @@ char	*ft_itoa(int n)
 	ctrl = 0;
 	tmp = malloc(sizeof(char) * 12);
 	if (tmp == NULL || n == 0)
-		return ((n == 0) ? "0" : NULL);
+		return (NULL);
 	if (n == -2147483648)
 		return ("-2147483648");
 	if (n < 0)
