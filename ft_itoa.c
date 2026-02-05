@@ -6,67 +6,51 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:49:34 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 02:56:11 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/05 04:03:58 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*ft_strrev(char *str)
+static int	ft_get_len(long n)
 {
-	int i;
-	int j;
-	int tmp;
+	int	len;
 
-	i = 0;
-	j = ft_strlen(str);
-	while (j > i)
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n != 0)
 	{
-		j--;
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i++;
+		len++;
+		n /= 10;
 	}
-	return str;
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int i;
-	int ctrl;
-	char *tmp;
+	char	*str;
+	long	nb;
+	int		len;
 
-	i = 0;
-	ctrl = 0;
-	tmp = malloc(sizeof(char) * 12);
-	if (tmp == NULL || n == 0)
+	nb = n;
+	len = ft_get_len(nb);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n < 0)
+	str[len] = '\0';
+	if (nb == 0)
+		str[0] = '0';
+	if (nb < 0)
 	{
-		ctrl = 1;
-		n *= -1;
+		str[0] = '-';
+		nb = -nb;
 	}
-	while (n)
+	while (nb > 0)
 	{
-		tmp[i++] = (n % 10) + '0';
-		n /= 10;
+		str[--len] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	if (ctrl)
-		tmp[i] = '-';
-	return ft_strrev(tmp);
+	return (str);
 }
-
-// int	main(void)
-// {
-// 	int i = 0;
-// 	int tab[5] = {-2147483648, -42, 0, 42, 2147483647};
-
-// 	while (i < 5)
-// 		printf("%s\n", ft_itoa(tab[i++]));
-
-// 	return 0;
-// }
