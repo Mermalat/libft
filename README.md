@@ -12,6 +12,41 @@ This repository contains the full source for the library, a public header (`libf
 - To learn how to design a minimal public API (`libft.h`) and provide one-function-per-file implementations.
 - To gain experience building and linking a static library using a `Makefile`.
 
+## Important Concepts: Memory Overlap and Type Casting
+
+### Memory Overlap
+When working with memory functions like `ft_memcpy` and `ft_memmove`, it's crucial to understand *overlapping* memory regions:
+- **`ft_memcpy`** copies bytes from source to destination without checking for overlap. If the regions overlap (source and destination partially or fully occupy the same memory), the behavior is undefined — bytes may be overwritten before being copied.
+- **`ft_memmove`** handles overlapping regions correctly by detecting overlap and copying in the appropriate direction (forwards or backwards) to ensure correctness.
+
+Example of problematic overlap:
+```c
+char buffer[10] = "hello";
+ft_memcpy(buffer + 1, buffer, 4);  // Unsafe! Undefined behavior
+```
+
+The same operation with `ft_memmove` is safe:
+```c
+char buffer[10] = "hello";
+ft_memmove(buffer + 1, buffer, 4);  // Safe! Result: "hhhllo"
+```
+
+Always use `ft_memmove` when source and destination might overlap; use `ft_memcpy` only when you are certain they don't.
+
+### Type Casting
+C requires explicit casting when converting between incompatible pointer types or when assigning values to wider/narrower types. This is especially relevant in `libft`:
+- **Character functions** (`ft_isalpha`, `ft_isdigit`, etc.) accept `int` but typically receive `char` values. Casts from `char` to `int` are safe and automatic in most contexts.
+- **Memory functions** use `void *` (generic pointers) to work with any data type. You may need to cast `void *` to the appropriate pointer type when retrieving data:
+  ```c
+  int *data = (int *)ft_memchr(buffer, 0, size);  // Cast to int *
+  ```
+- **Character values in memory functions**: Functions like `ft_memset` and `ft_memchr` accept `int c` and treat it as an unsigned byte. The parameter is typically cast to `unsigned char` internally:
+  ```c
+  ft_memset(ptr, 255, 10);  // 255 is cast to (unsigned char)255
+  ```
+
+When in doubt, use explicit casts to make your intent clear and avoid compiler warnings.
+
 ## Library overview
 - Public header: `libft/libft.h` — contains all function prototypes and the `t_list` struct.
 - Implementations: one `ft_*.c` file per function in `libft/` (for example `ft_strdup.c`, `ft_split.c`).
