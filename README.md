@@ -185,5 +185,3 @@ Add a new function example (high level):
 ## Notes for maintainers / contributors
 - Keep edits minimal and consistent with naming conventions.
 - When adding non-trivial behavior, include a small test in `ft_main.c` or a temporary test file and use `make run` to verify link and runtime behavior.
-
-If you want, I can also add a short example showing how to implement and test a new function end-to-end.
