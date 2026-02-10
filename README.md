@@ -1,4 +1,5 @@
-*This project has been created as part of the 42 curriculum by memalli*
+_This project has been created as part of the 42 curriculum by memalli_
+
 
 # Libft
 
