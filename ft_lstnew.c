@@ -6,7 +6,7 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 21:57:06 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 02:55:38 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/10 03:15:27 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ t_list *ft_lstnew(void *content)
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);
+}
+
+#include <stdio.h>
+int main()
+{
+	t_list *new_node = ft_lstnew(ft_strdup("Hello, World!"));
+	if (new_node)
+	{
+		printf("Node content: %s\n", (char *)new_node->content);
+		free(new_node->content);
+		free(new_node);
+	}
+	return 0;
 }

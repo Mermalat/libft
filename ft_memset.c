@@ -6,7 +6,7 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 02:37:23 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 02:37:35 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/10 02:54:16 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,15 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return (b);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char str[50] = "Hello, World!";
+	printf("Before memset: %s\n", str);
+	ft_memset(str, 'x', 5);
+	printf("After memset: %s\n", str);
+	return 0;
 }

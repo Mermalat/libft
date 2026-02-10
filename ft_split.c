@@ -6,7 +6,7 @@
 /*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:42:43 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 03:44:00 by merma            ###   ########.fr       */
+/*   Updated: 2026/02/10 02:50:57 by merma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,18 @@ char	**ft_split(char const *s, char c)
 	}
 	words[i] = NULL;
 	return (words);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	const char *s = "Hello world! This is a test.";
+	char **result = ft_split(s, ' ');
+	for (int i = 0; result[i] != NULL; i++)
+	{
+		printf("Word %d: '%s'\n", i, result[i]);
+		free(result[i]);
+	}
+	free(result);
 }
