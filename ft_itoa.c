@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 20:49:34 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 04:03:58 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:36:04 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/10 16:36:11 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_get_len(long n)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/05 02:37:05 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 02:37:08 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:35:47 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/10 16:35:53 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

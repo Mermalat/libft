@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/05 02:35:42 by merma             #+#    #+#             */
-/*   Updated: 2026/02/05 02:35:45 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:35:32 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/10 16:35:36 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 48 && c <= '9')
 		return (1);
 	return (0);
 }

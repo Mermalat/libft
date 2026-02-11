@@ -1,5 +1,4 @@
-_This project has been created as part of the 42 curriculum by memalli_
-
+_This project has been created as part of the 42 curriculum by memalli._
 
 # Libft
 
@@ -147,7 +146,7 @@ make re
 
 Run the simple test runner included in the repo:
 ```bash
-make run
+make run // This code will be off from the project due to make sure I pass.
 ```
 This target compiles `ft_main.c` together with `libft.a` and executes the resulting `test` binary.
 
@@ -170,7 +169,7 @@ Simple usage pattern to build and run the included main:
 ```bash
 cd libft
 make
-make run
+make clean
 ```
 
 Add a new function example (high level):
@@ -182,7 +181,9 @@ Add a new function example (high level):
 ## Resources
 - Standard C library documentation (man pages): `man strncpy`, `man malloc`, etc.
 - 42 school project subject and examples (student materials supplied by your campus).
+- AI, especially Gemini and GPT. Most of my AI usage on this project was mostly debateful.
 
-## Notes for maintainers / contributors
-- Keep edits minimal and consistent with naming conventions.
-- When adding non-trivial behavior, include a small test in `ft_main.c` or a temporary test file and use `make run` to verify link and runtime behavior.
+### How I used AI in my projects
+AI and I mostly debated over how to do functions, I specifically gave the prompt that "I do not want an answer, I want you to ask me teach me way to think how to build this".
+
+AI also used to translate my readme to english.

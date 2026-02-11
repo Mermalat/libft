@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 15:33:23 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 21:55:08 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:45:23 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/11 19:25:58 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-    const char *last = NULL;
+	const char	*last;
 
-    while (*s)
-    {
-        if (*s == (char)c)
-            last = s;
-        s++;
-    }
-    if (c == '\0')
-        return ((char *)s);
-    return ((char *)last);
+	last = NULL;
+	while (*s)
+	{
+		if (*s == (char)c)
+			last = s;
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return ((char *)last);
 }

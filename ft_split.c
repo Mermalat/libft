@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 20:42:43 by merma             #+#    #+#             */
-/*   Updated: 2026/02/10 02:50:57 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:42:59 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/11 19:11:06 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 static int	count_words(const char *s, char c)
 {
-	int count = 0;
-	int in_word = 0;
+	int	count;
+	int	in_word;
 
+	count = 0;
+	in_word = 0;
 	while (*s)
 	{
 		if (*s != c && !in_word)
@@ -34,61 +36,57 @@ static int	count_words(const char *s, char c)
 
 static int	word_length(const char *s, char c)
 {
-	int len = 0;
+	int	len;
 
+	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
 	return (len);
 }
 
-static char	**free_words(char **words, int i)
+static void	free_words(char **words, int i)
 {
 	while (i >= 0)
 		free(words[i--]);
 	free(words);
-	return (NULL);
+}
+
+static char	**ft_createwords(const char *mainstr, char **words, char sep)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	while (*mainstr)
+	{
+		if (*mainstr != sep)
+		{
+			len = word_length(mainstr, sep);
+			words[i] = ft_substr(mainstr, 0, len);
+			if (!words[i])
+			{
+				free_words(words, i - 1);
+				return (NULL);
+			}
+			i++;
+			mainstr += len;
+		}
+		else
+			mainstr++;
+	}
+	words[i] = NULL;
+	return (words);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
-	int		i;
-	int		len;
 
 	if (!s)
 		return (NULL);
 	words = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!words)
 		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			len = word_length(s, c);
-			words[i] = ft_substr(s, 0, len);
-			if (!words[i])
-				return (free_words(words, i - 1));
-			i++;
-			s += len;
-		}
-		else
-			s++;
-	}
-	words[i] = NULL;
+	words = ft_createwords(s, words, c);
 	return (words);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	const char *s = "Hello world! This is a test.";
-	char **result = ft_split(s, ' ');
-	for (int i = 0; result[i] != NULL; i++)
-	{
-		printf("Word %d: '%s'\n", i, result[i]);
-		free(result[i]);
-	}
-	free(result);
 }

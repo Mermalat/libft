@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: merma <merma@student.42.fr>                +#+  +:+       +#+         #
+#    By: memalli <memalli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/20 21:32:13 by merma             #+#    #+#              #
-#    Updated: 2026/02/05 02:46:59 by merma            ###   ########.fr        #
+#    Created: 2026/02/10 16:33:16 by memalli           #+#    #+#              #
+#    Updated: 2026/02/10 16:33:18 by memalli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-# Düzeltilmiş Run Komutu: $(NAME) ekledik
-run: $(NAME)
-	$(CC) $(FLAGS) ft_main.c $(NAME) -o test
-	@echo "\n --- Running Test --- \n"
-	@./test
-	@echo "\n --- Test Finished, Test file is getting deleted --- \n"
-	@rm -f test
 
 .PHONY: all clean fclean re run

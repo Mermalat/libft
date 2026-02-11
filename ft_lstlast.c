@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merma <merma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: memalli <memalli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 22:57:19 by merma             #+#    #+#             */
-/*   Updated: 2026/01/20 23:03:01 by merma            ###   ########.fr       */
+/*   Created: 2026/02/10 16:40:11 by memalli           #+#    #+#             */
+/*   Updated: 2026/02/10 16:40:12 by memalli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
